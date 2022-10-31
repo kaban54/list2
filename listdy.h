@@ -90,6 +90,8 @@ ListElem_t *ListGetHead (List_t *list);
 
 ListElem_t *ListGetTail (List_t *list);
 
+ListElem_t *ListGetElem (List_t *list, int index);
+
 int ListInsert (ListElem_t *prev, val_t value);
 
 int ListInsertHead (List_t *list, val_t value);

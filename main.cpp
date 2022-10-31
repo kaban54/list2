@@ -12,6 +12,9 @@ int main()
 
     ListCtor (&list);
 
+    fprintf (LOG, "<h2>LIST CONSTRUCTED</h2>");
+    ListDump (&list);
+
     ListInsertHead (&list, 1);
     fprintf (LOG, "<hr><h2>INSERT 1 IN HEAD</h2>");
     ListDump (&list);
@@ -30,6 +33,10 @@ int main()
 
     ListInsertTail (&list, 4);
     fprintf (LOG, "<hr><h2>INSERT 4 IN TAIL</h2>");
+    ListDump (&list);
+
+    ListInsert (ListGetElem (&list, 2), 5);
+    fprintf (LOG, "<hr><h2>INSERT 5 AFTER SECOND ELEM</h2>");
     ListDump (&list);
 
     ListDtor (&list);

@@ -154,6 +154,19 @@ int ListGetIndex (List_t *list, ListElem_t *elem, int *index)
     return LIST_OK;
 }
 
+ListElem_t *ListGetElem (List_t *list, int index)
+{
+    if (index < 0 || list == nullptr || list -> data == nullptr) return nullptr;
+
+    ListElem_t *elem = list -> data;
+    for (;index > 0; index--)
+    {
+        elem = elem -> next;
+        if (elem == nullptr || elem == list -> data) return nullptr;
+    }
+
+    return elem;
+}
 
 int List_verify (List_t *list)
 {
